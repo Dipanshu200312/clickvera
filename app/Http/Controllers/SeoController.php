@@ -11,7 +11,7 @@ class SeoController extends Controller
 {
     public function sitemap(): Response
     {
-        URL::forceRootUrl('https://www.clickvera.in');
+        URL::forceRootUrl('https://clickvera.in');
         URL::forceScheme('https');
 
         $now = now()->toAtomString();

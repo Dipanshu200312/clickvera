@@ -5,10 +5,14 @@
     <div class="header-accent"></div>
     <nav class="container-wide flex items-center justify-between" style="min-height: 112px; gap: 24px; padding-top: 6px; padding-bottom: 6px;">
         {{-- Logo --}}
-        <a href="{{ route('home') }}" class="flex items-center shrink-0" style="gap: 0;">
+        <a href="{{ route('home') }}" class="flex items-center shrink-0" aria-label="ClickVera — Digital Marketing Agency in India (Home)" style="gap: 0;">
             <img
-                src="{{ asset('public/assets/logo/logo.png') }}"
-                alt="{{ $siteSettings['site_name'] ?? 'Clickvera' }}"
+                src="{{ asset('assets/logo/logo.png') }}"
+                alt="ClickVera — Digital Marketing Agency in India"
+                width="280"
+                height="108"
+                fetchpriority="high"
+                decoding="async"
                 style="height: 108px; width: auto; max-width: 280px; object-fit: contain; display: block;"
             >
         </a>

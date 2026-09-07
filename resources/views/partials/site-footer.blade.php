@@ -13,8 +13,8 @@
         <div class="footer-cta">
             <div>
                 <p class="eyebrow">Ready to start?</p>
-                <h2>Build, grow and support your digital presence.</h2>
-                <p>Websites, digital products, campaigns, content and technical support shaped around your business goals.</p>
+                <h2>Ready to Grow Your Business Online?</h2>
+                <p>Websites, SEO, digital marketing, e-commerce, UI/UX and technical support shaped around your business goals. <a href="{{ route('services') }}" style="color:#5eead4; font-weight:700;">Explore digital marketing services</a>.</p>
             </div>
             <a href="{{ route('contact') }}" class="btn-primary btn-xl" style="white-space: nowrap;">
                 Book a Free Consultation
@@ -30,9 +30,9 @@
                 </a>
                 <p>{{ $siteSettings['footer_text'] ?? 'ClickVera - Your digital and technology partner for building, growing and supporting your business.' }}</p>
                 <div class="footer-image-row">
-                    <img src="{{ $teamImage }}" alt="Agency strategy team">
-                    <img src="{{ $codeImage }}" alt="Website development desk">
-                    <img src="{{ $writingImage }}" alt="Content writing workspace">
+                    <img src="{{ $teamImage }}" alt="ClickVera digital marketing and technology team planning client growth" width="400" height="260" loading="lazy" decoding="async">
+                    <img src="{{ $codeImage }}" alt="Website development project by ClickVera web development company in India" width="400" height="260" loading="lazy" decoding="async">
+                    <img src="{{ $writingImage }}" alt="ClickVera SEO and digital marketing services content workspace" width="400" height="260" loading="lazy" decoding="async">
                 </div>
             </div>
 
@@ -48,11 +48,11 @@
 
             <div>
                 <h3>Services</h3>
-                <a href="{{ route('services') }}#services">Website & Development</a>
-                <a href="{{ route('services') }}#services">UI/UX Design</a>
-                <a href="{{ route('services') }}#services">Digital Marketing</a>
-                <a href="{{ route('services') }}#services">SEO & Social Media</a>
-                <a href="{{ route('services') }}#services">Technical Support</a>
+                <a href="{{ route('services') }}#services">Website Design &amp; Development</a>
+                <a href="{{ route('services') }}#services">UI/UX Design Services</a>
+                <a href="{{ route('services') }}#services">SEO &amp; Digital Marketing</a>
+                <a href="{{ route('services') }}#services">E-commerce Development</a>
+                <a href="{{ route('services') }}#services">Technical Support &amp; Maintenance</a>
             </div>
 
             <div>
@@ -61,11 +61,7 @@
                 <p><a href="tel:+918178842239">{{ $contactPhone }}</a></p>
                 <a href="{{ route('privacy') }}">Privacy Policy</a>
                 <a href="{{ route('terms') }}">Terms & Conditions</a>
-                <div class="social-row">
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="Instagram">ig</a>
-                    <a href="#" aria-label="Twitter">x</a>
-                </div>
+                {{-- Social profiles: add real URLs when available. Placeholder "#" links removed to avoid broken/crawlable links. --}}
             </div>
         </div>
 

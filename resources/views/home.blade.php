@@ -1,6 +1,46 @@
 @extends('layouts.app')
-@section('meta_title', 'Clickvera | Digital & Technology Partner')
-@section('meta_description', 'Clickvera helps startups, SMEs, local businesses and professional service companies build, grow and support their digital presence.')
+@section('meta_title', 'Digital Marketing & Web Development Agency in India | ClickVera')
+@section('meta_description', 'ClickVera is a digital marketing and web development agency in India offering SEO, websites, e-commerce, UI/UX, digital marketing and technology solutions.')
+@section('canonical_url', 'https://clickvera.in/')
+@section('og_image', 'https://clickvera.in/assets/logo/logo.png')
+@section('schema')
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@graph' => [
+        [
+            '@type' => 'Organization',
+            '@id' => 'https://clickvera.in/#organization',
+            'name' => 'ClickVera',
+            'url' => 'https://clickvera.in/',
+            'logo' => 'https://clickvera.in/assets/logo/logo.png',
+            'email' => 'team@clickvera.in',
+            'telephone' => '+91 8178842239',
+        ],
+        [
+            '@type' => 'WebSite',
+            '@id' => 'https://clickvera.in/#website',
+            'url' => 'https://clickvera.in/',
+            'name' => 'ClickVera',
+            'publisher' => ['@id' => 'https://clickvera.in/#organization'],
+        ],
+        [
+            '@type' => 'FAQPage',
+            '@id' => 'https://clickvera.in/#faq',
+            'mainEntity' => [
+                ['@type' => 'Question', 'name' => 'What services does ClickVera provide?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'ClickVera provides website design and development, UI/UX design, web application development, e-commerce development, SEO and local SEO, digital marketing, social media management, lead generation, content, branding and website maintenance and technical support.']],
+                ['@type' => 'Question', 'name' => 'Does ClickVera provide SEO services?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera provides SEO and local SEO services, including on-page optimisation, technical improvements, local presence optimisation and ongoing monthly SEO support starting from ₹10,000/month.']],
+                ['@type' => 'Question', 'name' => 'Does ClickVera develop business websites?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera designs and develops responsive business websites, from 1–5 page starter websites to custom 10-page websites and advanced custom builds, with SEO-friendly structure and lead-generation forms.']],
+                ['@type' => 'Question', 'name' => 'Does ClickVera provide e-commerce development?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera builds custom e-commerce websites as part of its Scale solutions and custom services, with design, development and ongoing support shaped around your products and workflow.']],
+                ['@type' => 'Question', 'name' => 'Does ClickVera work with startups and small businesses?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera works with startups, SMEs, local businesses, professional service companies and growing brands, with Launch, Growth and Scale plans for different stages.']],
+                ['@type' => 'Question', 'name' => 'How does ClickVera\u2019s digital marketing service work?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'ClickVera plans targeted digital marketing and lead-generation campaigns with conversion-focused pages, analytics and reporting. Monthly management starts from ₹20,000/month, with advertising budgets billed separately.']],
+                ['@type' => 'Question', 'name' => 'How can I get started with ClickVera?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Share your requirements through the contact form or book a free consultation. The ClickVera team responds within 24 hours with a clear plan, scope, timeline and proposal.']],
+            ],
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+@endsection
 @section('content')
 @php
     $images = [
@@ -118,10 +158,10 @@
 
     $customServices = ['Web Application Development', 'Mobile App Development', 'Custom Software Development', 'E-commerce Development', 'Advanced Website Development', 'Custom UI/UX Design', 'Business System Integrations', 'CRM Integrations', 'API Integrations', 'Technical Consulting'];
     $supportPlans = [
-        ['title' => 'SEO & Local SEO', 'price' => 'Starting from ₹10,000/month', 'description' => 'Improve your search visibility, local presence and organic traffic through ongoing SEO optimisation.', 'cta' => 'Explore SEO'],
-        ['title' => 'Social Media Management', 'price' => 'Starting from ₹10,000/month', 'description' => 'Build a consistent social media presence with content planning, creative support, publishing and reporting.', 'cta' => 'Explore Social Media'],
-        ['title' => 'Digital Marketing & Lead Generation', 'price' => 'Starting from ₹20,000/month', 'description' => 'Generate qualified leads through targeted digital marketing campaigns and conversion-focused strategies.', 'note' => 'Advertising budget billed separately.', 'cta' => 'Grow Your Business'],
-        ['title' => 'Website Maintenance & Security', 'price' => 'Starting from ₹5,000/month', 'description' => 'Keep your website secure, updated, backed up and performing reliably with ongoing technical support.', 'cta' => 'Get Support'],
+        ['title' => 'SEO & Local SEO', 'price' => 'Starting from ₹10,000/month', 'description' => 'Improve your search visibility, local presence and organic traffic through ongoing SEO optimisation for startups, SMEs and local businesses.', 'cta' => 'Explore SEO Services'],
+        ['title' => 'Social Media Management', 'price' => 'Starting from ₹10,000/month', 'description' => 'Build a consistent social media presence with content planning, creative support, publishing and reporting.', 'cta' => 'Explore Social Media Services'],
+        ['title' => 'Digital Marketing & Lead Generation', 'price' => 'Starting from ₹20,000/month', 'description' => 'Generate qualified leads through targeted digital marketing campaigns and conversion-focused strategies for growing businesses.', 'note' => 'Advertising budget billed separately.', 'cta' => 'Explore Lead Generation Services'],
+        ['title' => 'Technical Support & Website Maintenance', 'price' => 'Starting from ₹5,000/month', 'description' => 'Keep your website secure, updated, backed up and performing reliably with ongoing technical support and website maintenance.', 'cta' => 'Explore Maintenance Services'],
     ];
 @endphp
 
@@ -195,9 +235,9 @@
             <div class="reveal text-center lg:text-left">
                 <div class="hero-badge mx-auto lg:mx-0"><span></span>Digital & Technology Partner • Since 2020</div>
 
-                <h1 class="hero-title mx-auto lg:mx-0" style="max-width: 32rem; text-align: inherit;">Your Digital Partner for <span class="highlight">Building, Growing</span> and Scaling Business.</h1>
+                <h1 class="hero-title mx-auto lg:mx-0" style="max-width: 32rem; text-align: inherit;">Digital Marketing &amp; Web Development Agency for Growing Businesses</h1>
 
-                <p class="hero-copy mx-auto lg:mx-0" style="text-align: inherit; max-width: 30rem;">We help startups, SMEs & local businesses turn ideas into revenue — with strategy, design, and tech that actually converts.</p>
+                <p class="hero-copy mx-auto lg:mx-0" style="text-align: inherit; max-width: 30rem;">ClickVera helps startups, SMEs, local businesses and growing companies build, improve and grow their digital presence through digital marketing, SEO, website development, e-commerce, UI/UX and technology solutions.</p>
 
                 <div class="home-hero-actions" style="justify-content: center;">
                     <style>@media(min-width:1024px){ .home-hero-actions{justify-content:flex-start !important;}}</style>
@@ -206,16 +246,16 @@
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                     <a class="btn-secondary" href="{{ route('services') }}" style="padding:12px 18px; border-radius:10px; background: rgba(255,255,255,.08); color:#fff; border-color: rgba(255,255,255,.14);">
-                        View Our Services
+                        View Digital Marketing &amp; Web Development Services
                     </a>
                 </div>
 
                 <div class="hero-social-proof" style="justify-content: center;">
                     <style>@media(min-width:1024px){ .hero-social-proof{justify-content:flex-start !important;}}</style>
-                    <div class="avatar-stack">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="">
+                    <div class="avatar-stack" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="" width="32" height="32" loading="lazy" decoding="async">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="" width="32" height="32" loading="lazy" decoding="async">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="" width="32" height="32" loading="lazy" decoding="async">
                         <span>+50</span>
                     </div>
                     <div class="text-left">
@@ -246,7 +286,7 @@
             <div class="reveal relative hidden lg:block" style="--delay:120ms">
                 <div style="position:relative; border-radius:24px; overflow:hidden; border:1px solid rgba(255,255,255,.09); box-shadow: 0 28px 70px rgba(0,0,0,.38), 0 0 0 1px rgba(255,255,255,.04) inset; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); padding: 8px;">
                     <div style="border-radius:18px; overflow:hidden; position:relative; background:#0F172A; border:1px solid rgba(255,255,255,.06);">
-                        <img src="{{ $images['hero'] }}" alt="Team collaborating" style="width:100%; height:404px; object-fit:cover; opacity:1; filter: saturate(1.08) contrast(1.06); display:block;">
+                        <img src="{{ $images['hero'] }}" alt="ClickVera digital marketing and web development team collaborating on client growth" width="1200" height="404" fetchpriority="high" decoding="async" style="width:100%; height:404px; object-fit:cover; opacity:1; filter: saturate(1.08) contrast(1.06); display:block;">
                         <div style="position:absolute; inset:auto 12px 12px 12px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
                             <div style="background:rgba(255,255,255,.96); backdrop-filter:blur(14px); border-radius:14px; padding:12px; border:1px solid rgba(226,232,240,.9); box-shadow: 0 8px 24px rgba(15,23,42,.12);">
                                 <div style="font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#64748b;">Revenue Growth</div>
@@ -284,7 +324,7 @@
             {{-- Left — image (height = content) --}}
             <div class="reveal flex flex-col h-full">
                 <div style="position: relative; flex: 1; display:flex; flex-direction:column; border-radius: 20px; overflow: hidden; background: #f1f5f9; border: 1px solid #e2e8f0; box-shadow: 0 20px 50px rgba(15,23,42,.10); min-height: 420px;">
-                    <img src="{{ $images['team'] }}" alt="Clickvera team collaborating" style="width:100%; flex:1; min-height: 380px; object-fit: cover; object-position: center; display:block;">
+                    <img src="{{ $images['team'] }}" alt="ClickVera digital marketing and technology team working with startups and SMEs in India" width="800" height="520" loading="lazy" decoding="async" style="width:100%; flex:1; min-height: 380px; object-fit: cover; object-position: center; display:block;">
                     <div style="position: absolute; left: 14px; right: 14px; bottom: 14px; background: rgba(255,255,255,.97); backdrop-filter: blur(10px); border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; display:flex; align-items:center; gap:12px; box-shadow: 0 10px 24px rgba(15,23,42,.14);">
                         <span style="width:38px; height:38px; border-radius:9px; background:#0F766E; color:#fff; display:grid; place-items:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
                         <div style="flex:1; min-width:0;"><div style="font-size:13px; font-weight:800; color:#0F172A; line-height:1;">50+ Happy Clients</div><div style="font-size:12px; color:#64748b; white-space:nowrap;">Trusted by startups & SMEs across India</div></div>
@@ -301,8 +341,8 @@
                     <span style="width:6px; height:6px; border-radius:99px; background:#22c55e;"></span>
                     <span style="font-size:12px; font-weight:700; color:#64748b;">Since 2020</span>
                 </div>
-                <h2 class="section-title" style="margin-top: 14px; font-size: clamp(1.85rem, 3vw, 2.4rem); line-height:1.12; letter-spacing:-.03em; font-weight: 900;">We are Clickvera — your <span style="background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">full-service</span> growth partner.</h2>
-                <p class="mt-4 text-[15px] leading-7 text-slate-600">We don’t just build websites. We bring <b style="color:#0F172A; font-weight:800;">strategy + design + development + marketing + support</b> under one roof — so your digital presence finally works together to get customers.</p>
+                <h2 class="section-title" style="margin-top: 14px; font-size: clamp(1.85rem, 3vw, 2.4rem); line-height:1.12; letter-spacing:-.03em; font-weight: 900;">Digital Marketing &amp; Technology Solutions That Drive Growth</h2>
+                <p class="mt-4 text-[15px] leading-7 text-slate-600">ClickVera is a digital marketing agency in India helping startups, SMEs and local businesses solve slow websites, low search visibility and inconsistent enquiries. We bring <b style="color:#0F172A; font-weight:800;">strategy + website development + SEO + digital marketing + support</b> under one roof — so your digital presence works together to win customers.</p>
 
                 <div class="mt-7 grid grid-cols-3 gap-3">
                     <div style="text-align:center; background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:16px 8px; box-shadow: 0 4px 12px rgba(15,23,42,.04);"><div style="font-size:20px; font-weight:900; color:#0F172A; line-height:1;">150+</div><div style="font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#64748b; margin-top:6px;">Projects</div></div>
@@ -326,8 +366,8 @@
                 </div>
 
                 <div class="mt-8 flex flex-wrap gap-3" style="padding-bottom: 4px;">
-                    <a href="{{ route('about') }}" class="inline-flex items-center gap-2 rounded-xl bg-[#0F172A] px-6 py-3 text-[14px] font-bold text-white shadow-md hover:bg-black transition" style="min-height:44px;">Learn More About Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-                    <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-[14px] font-bold text-slate-700 hover:border-slate-300" style="min-height:44px;">Talk to an Expert</a>
+                    <a href="{{ route('about') }}" class="inline-flex items-center gap-2 rounded-xl bg-[#0F172A] px-6 py-3 text-[14px] font-bold text-white shadow-md hover:bg-black transition" style="min-height:44px;">About ClickVera Digital Marketing Agency <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                    <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-[14px] font-bold text-slate-700 hover:border-slate-300" style="min-height:44px;">Talk to a Digital Marketing Expert</a>
                 </div>
             </div>
         </div>
@@ -342,29 +382,29 @@
         <div class="container-wide" style="position: relative;">
             <div class="reveal" style="text-align: center; max-width: 42rem; margin: 0 auto;">
                 <p class="eyebrow-dark" style="justify-content: center; gap: 10px;"><span style="width:28px; height:2px; background:#0F766E; border-radius:99px; display:inline-block;"></span> WHAT WE DO <span style="width:28px; height:2px; background:#0F766E; border-radius:99px; display:inline-block;"></span></p>
-                <h2 class="section-title" style="text-align: center; margin-left:auto; margin-right:auto; font-size: clamp(1.85rem, 3.2vw, 2.5rem); line-height:1.12;">Build, grow and support your digital presence with one team.</h2>
-                <p style="text-align: center; margin: 16px auto 0; max-width: 38rem; font-size: 15px; line-height: 1.7; color: #64748b;">Our services are organised around the journey most businesses actually follow: create the foundation, increase visibility, then keep improving.</p>
+                <h2 class="section-title" style="text-align: center; margin-left:auto; margin-right:auto; font-size: clamp(1.85rem, 3.2vw, 2.5rem); line-height:1.12;">Our Digital Marketing &amp; Web Development Services</h2>
+                <p style="text-align: center; margin: 16px auto 0; max-width: 38rem; font-size: 15px; line-height: 1.7; color: #64748b;">ClickVera organises website development, SEO, digital marketing, e-commerce, UI/UX and support around the journey most businesses follow: create the foundation, increase visibility, then keep improving. <a href="{{ route('services') }}" style="font-weight:700; color:#0F766E;">View all digital marketing services</a>.</p>
             </div>
             <div class="mt-10 grid gap-6 md:grid-cols-3 items-stretch">
                 @php
                     $serviceOverview = [
-                        ['title' => 'Build', 'image' => $images['code'], 'desc' => 'Design and develop websites, web applications, mobile apps, software systems and e-commerce experiences built for real business use.', 'icon' => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', 'accent' => '#0F766E'],
-                        ['title' => 'Grow', 'image' => $images['marketing'], 'desc' => 'Improve search visibility, run focused campaigns, manage social channels and create content that helps generate better enquiries.', 'icon' => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>', 'accent' => '#0F172A'],
-                        ['title' => 'Support & Create', 'image' => $images['writing'], 'desc' => 'Keep your website secure, improve performance, strengthen your brand and create the digital assets your team needs month after month.', 'icon' => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>', 'accent' => '#b45309'],
+                        ['title' => 'Website Design & Development', 'image' => $images['code'], 'alt' => 'Website design and development services by ClickVera digital marketing agency in India', 'desc' => 'Responsive business websites and custom builds with SEO-friendly structure, lead-generation forms and analytics — ideal for startups, SMEs and local businesses launching or rebuilding online.', 'icon' => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', 'accent' => '#0F766E', 'link' => 'Explore Website Development Services'],
+                        ['title' => 'SEO & Digital Marketing', 'image' => $images['marketing'], 'alt' => 'ClickVera SEO and digital marketing services for lead generation in India', 'desc' => 'SEO, local SEO, social media management, targeted campaigns and content that improve search visibility and help generate better enquiries from the right customers.', 'icon' => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>', 'accent' => '#0F172A', 'link' => 'Explore SEO & Digital Marketing Services'],
+                        ['title' => 'E-commerce, UI/UX & Support', 'image' => $images['writing'], 'alt' => 'E-commerce development, UI/UX design and website maintenance services by ClickVera', 'desc' => 'E-commerce builds, web applications, UI/UX design, branding and website maintenance and security that keep your store and site fast, secure and improving month after month.', 'icon' => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>', 'accent' => '#b45309', 'link' => 'Explore E-commerce & UI/UX Services'],
                     ];
                 @endphp
                 @foreach($serviceOverview as $svc)
                     <article class="reveal group flex flex-col overflow-hidden bg-white border border-slate-200 rounded-[20px] shadow-sm hover:shadow-xl hover:border-slate-300 hover:-translate-y-1.5 transition-all duration-300" style="--delay: {{ $loop->index * 100 }}ms">
                         <div style="position: relative; height: 190px; overflow: hidden; background: #f1f5f9;">
-                            <img src="{{ $svc['image'] }}" alt="{{ $svc['title'] }}" style="width:100%; height:100%; object-fit: cover; transition: transform .6s ease;" class="group-hover:scale-[1.04]">
+                            <img src="{{ $svc['image'] }}" alt="{{ $svc['alt'] }}" width="800" height="450" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit: cover; transition: transform .6s ease;" class="group-hover:scale-[1.04]">
                             <div style="position:absolute; inset:0; background: linear-gradient(180deg, transparent 40%, rgba(15,23,42,.06) 100%);"></div>
                             <div style="position:absolute; top:0; left:0; right:0; height:3px; background: {{ $svc['accent'] }};"></div>
                         </div>
                         <div style="position: relative; flex:1; display:flex; flex-direction:column; padding: 22px 22px 24px;">
-                            <div style="width:44px; height:44px; border-radius:12px; background: {{ $svc['accent'] }}; color:#fff; display:grid; place-items:center; box-shadow: 0 8px 20px rgba(15,118,110,.18); margin-top: -42px; border: 3px solid #fff;">{!! $svc['icon'] !!}</div>
+                            <div style="width:44px; height:44px; border-radius:12px; background: {{ $svc['accent'] }}; color:#fff; display:grid; place-items:center; box-shadow: 0 8px 20px rgba(15,118,110,.18); margin-top: -42px; border: 3px solid #fff;" aria-hidden="true">{!! $svc['icon'] !!}</div>
                             <h3 style="margin-top:14px; font-size:18px; font-weight:800; color:#0F172A; letter-spacing:-.02em; line-height:1.2;">{{ $svc['title'] }}</h3>
                             <p style="margin-top:10px; font-size:14px; line-height:1.7; color:#64748b; flex:1;">{{ $svc['desc'] }}</p>
-                            <div style="margin-top:16px; display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:{{ $svc['accent'] }};">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                            <div style="margin-top:16px;"><a href="{{ route('services') }}#services" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:{{ $svc['accent'] }};">{{ $svc['link'] }} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
                         </div>
                     </article>
                 @endforeach
@@ -383,9 +423,9 @@
             <div>
                 <div class="reveal" style="max-width:47rem; text-align:center; margin:0 auto;">
                     <p style="display:inline-flex; align-items:center; gap:9px; color:#0f766e; font-size:12px; font-weight:800; letter-spacing:.16em;"><span style="display:block; width:30px; height:2px; background:#0f766e;"></span>WHAT WE OFFER</p>
-                    <h2 style="margin-top:18px; color:#0f172a; font-size:clamp(2.35rem,5vw,4.4rem); font-weight:900; letter-spacing:-.065em; line-height:.98;">A complete digital team,<br><span style="color:#0f766e;">built around your ambition.</span></h2>
-                    <p style="margin-top:20px; color:#b8c8d9; font-size:15px; line-height:1.75;">Start where your business needs us most—or bring the whole digital journey together with one focused team.</p>
-                    <a href="{{ route('services') }}#services" style="margin-top:28px; display:inline-flex; align-items:center; gap:9px; padding:0 0 8px; color:#0f172a; border-bottom:2px solid #0f766e; font-size:13px; font-weight:800;">View all services <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                    <h2 style="margin-top:18px; color:#0f172a; font-size:clamp(2.35rem,5vw,4.4rem); font-weight:900; letter-spacing:-.065em; line-height:.98;">Digital Solutions Built Around Your Business Goals</h2>
+                    <p style="margin-top:20px; color:#b8c8d9; font-size:15px; line-height:1.75;">Start where your business needs us most — website design, SEO, digital marketing, e-commerce, UI/UX, lead generation or technical support — or bring the whole journey together with one team.</p>
+                    <a href="{{ route('services') }}#services" style="margin-top:28px; display:inline-flex; align-items:center; gap:9px; padding:0 0 8px; color:#0f172a; border-bottom:2px solid #0f766e; font-size:13px; font-weight:800;">View all website development and digital marketing services <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                 </div>
 
                 <div style="margin-top:54px; border-top:1px solid rgba(15,23,42,.18); background:rgba(255,255,255,.48); backdrop-filter:blur(10px); padding:0 28px; border-radius:22px; box-shadow:0 18px 45px rgba(50,76,110,.08);">
@@ -394,6 +434,7 @@
                         $num = str_pad($loop->iteration, 2, '0', STR_PAD_LEFT);
                         $accent = $loop->iteration === 1 ? '#0F766E' : ($loop->iteration === 2 ? '#0F172A' : '#92400e');
                         $bg = $loop->iteration === 1 ? 'linear-gradient(135deg,#0F766E 0%,#14B8A6 100%)' : ($loop->iteration === 2 ? 'linear-gradient(135deg,#0F172A 0%,#334155 100%)' : 'linear-gradient(135deg,#92400e 0%,#b45309 100%)');
+                        $offeringLinkText = $loop->iteration === 1 ? 'Explore Website Development & UI/UX Services' : ($loop->iteration === 2 ? 'Explore SEO & Digital Marketing Services' : 'Explore Technical Support & Maintenance Services');
                     @endphp
                     <article class="reveal group" style="--delay: {{ $loop->index * 100 }}ms; padding:36px 0; border-bottom:1px solid rgba(15,23,42,.16);">
                         <div class="grid gap-5 items-start md:grid-cols-[120px_1fr_1.25fr] md:gap-10">
@@ -414,7 +455,7 @@
                             <div>
                                 <h3 style="font-size:clamp(1.7rem,2.5vw,2.35rem); font-weight:900; color:#0f172a; letter-spacing:-.05em; line-height:1;">{{ $offering['title'] }}</h3>
                                 <p style="margin-top:12px; max-width:27rem; font-size:14px; line-height:1.7; color:#64748b;">{{ $offering['summary'] }}</p>
-                                <a href="{{ route('services') }}#services" style="margin-top:13px; display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:800; color:{{ $loop->iteration === 1 ? '#5eead4' : ($loop->iteration === 2 ? '#93c5fd' : '#fbbf24') }};">Explore <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                                <a href="{{ route('services') }}#services" style="margin-top:13px; display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:800; color:{{ $loop->iteration === 1 ? '#5eead4' : ($loop->iteration === 2 ? '#93c5fd' : '#fbbf24') }};">{{ $offeringLinkText }} <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                             </div>
                             <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-content:flex-start; gap:10px 18px; padding-top:5px;">
                                 @foreach($offering['items'] as $item)
@@ -499,7 +540,7 @@
             </div>
             <div class="custom-solutions-list">
                 @foreach($customServices as $customService)
-                    <a href="{{ route('contact') }}" class="custom-solution-row reveal" style="--delay: {{ $loop->index * 70 }}ms;">
+                    <a href="{{ route('contact') }}" class="custom-solution-row reveal" style="--delay: {{ $loop->index * 70 }}ms;" aria-label="Discuss {{ $customService }} with ClickVera">
                         <span class="custom-solution-number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                         <span class="custom-solution-name">{{ $customService }}</span>
                         <span class="custom-solution-arrow">↗</span>
@@ -528,7 +569,7 @@
                         @isset($supportPlan['note'])
                             <p class="plan-note">{{ $supportPlan['note'] }}</p>
                         @endisset
-                        <a href="{{ route('contact') }}" class="btn-plan mt-6">{{ $supportPlan['cta'] }}</a>
+                        <a href="{{ route('contact') }}" class="btn-plan mt-6" aria-label="{{ $supportPlan['cta'] }} — contact ClickVera">{{ $supportPlan['cta'] }}</a>
                     </article>
                 @endforeach
             </div>
@@ -562,7 +603,7 @@
         <div class="container-wide grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
             <div class="reveal">
                 <p class="eyebrow">FEATURED WORK</p>
-                <h2 class="section-title text-white">Work we're proud to put our name on.</h2>
+                <h2 class="section-title text-white">Our Work</h2>
                 <p class="section-subtitle">A look at the websites, campaigns, and content systems we've built for businesses across different industries.</p>
                 <a href="{{ route('work') }}" class="btn-primary mt-8">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
@@ -594,19 +635,19 @@
             <div class="carousel-head reveal">
                 <div>
                     <p class="eyebrow-dark">LATEST INSIGHTS</p>
-                    <h2 class="section-title">Ideas and updates for better digital growth.</h2>
-                    <p class="home-section-copy">Practical guides, marketing tips, and industry updates written to help business owners make smarter decisions online.</p>
+                    <h2 class="section-title">Digital Growth Insights</h2>
+                    <p class="home-section-copy">Practical SEO, website and digital marketing guides written to help startups, SMEs and local businesses make smarter decisions online. <a href="{{ route('blog.index') }}" style="font-weight:700; color:#0F766E;">Read all digital growth insights</a>.</p>
                 </div>
                 <a href="{{ route('blog.index') }}" class="btn-light">
-                    Read Blog
+                    Read Digital Growth Insights
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
             </div>
             <div class="insights-grid">
                 @forelse($blogs as $blog)
-                    <a href="{{ route('blog.show', $blog->slug) }}" class="project-card insight-card {{ $loop->first ? 'is-featured' : '' }} {{ $blogs->count() === 1 ? 'is-only' : '' }} reveal" style="--delay: {{ $loop->index * 80 }}ms">
+                    <a href="{{ route('blog.show', $blog->slug) }}" class="project-card insight-card {{ $loop->first ? 'is-featured' : '' }} {{ $blogs->count() === 1 ? 'is-only' : '' }} reveal" style="--delay: {{ $loop->index * 80 }}ms" aria-label="Read article: {{ $blog->title }}">
                         <div class="project-media">
-                            <img src="{{ $blog->featured_image ? asset('storage/'.$blog->featured_image) : $images['marketing'] }}" alt="{{ $blog->title }}">
+                            <img src="{{ $blog->featured_image ? asset('storage/'.$blog->featured_image) : $images['marketing'] }}" alt="{{ $blog->title }} — ClickVera digital growth insight" width="800" height="450" loading="lazy" decoding="async">
                         </div>
                         <div style="padding: 24px;">
                             <span class="insight-meta">{{ optional($blog->published_at)->format('M d, Y') ?? 'Insight' }} <b>•</b> Insights</span>
@@ -630,8 +671,8 @@
         <div class="container-wide">
             <div class="section-heading partners-heading reveal">
                 <p class="eyebrow partners-eyebrow"><span></span>OUR TECHNOLOGY PARTNERS<span></span></p>
-                <h2 class="section-title text-white">The right platforms.<br><em>Real business results.</em></h2>
-                <p class="section-subtitle" style="text-align: center; margin-left: auto; margin-right: auto;">We use industry-leading platforms Google, Meta, Shopify, WordPress, and Laravel to build and grow your digital presence with the right tools for your business.</p>
+                <h2 class="section-title text-white">Why Businesses Choose ClickVera</h2>
+                <p class="section-subtitle" style="text-align: center; margin-left: auto; margin-right: auto;">We use industry-leading platforms Google, Meta, Shopify, WordPress, and Laravel to build and grow your digital presence with the right tools for your business. <a href="{{ route('about') }}" style="color:#5eead4; font-weight:700;">Learn why businesses choose ClickVera</a>.</p>
             </div>
             @php
                 $partnerVisuals = [
@@ -648,7 +689,7 @@
                     <div class="partner-showcase-tile reveal" style="--delay: {{ $loop->index * 80 }}ms;">
                         <span class="partner-mark {{ $visual['type'] }}">
                             @if($visual['logo'])
-                                <img src="{{ asset('public/assets/platforms/'.$visual['logo']) }}" alt="{{ $partner }} logo" loading="lazy">
+                                <img src="{{ asset('assets/platforms/'.$visual['logo']) }}" alt="{{ $partner }} platform used by ClickVera digital marketing agency" width="48" height="48" loading="lazy" decoding="async">
                             @else
                                 {{ $visual['mark'] }}
                             @endif
@@ -686,7 +727,7 @@
                         <div class="client-logo-group" @if($isDuplicate) aria-hidden="true" @endif>
                             @foreach($clientLogos as $clientLogo)
                                 <div class="home-logo-tile-light client-logo-tile">
-                                    <img src="{{ asset('public/assets/logo/'.$clientLogo['file']) }}" alt="{{ $isDuplicate ? '' : $clientLogo['name'].' logo' }}" loading="lazy">
+                                    <img src="{{ asset('assets/logo/'.$clientLogo['file']) }}" alt="{{ $isDuplicate ? '' : $clientLogo['name'].' — ClickVera client success story' }}" @if($isDuplicate) aria-hidden="true" @endif width="160" height="64" loading="lazy" decoding="async">
                                 </div>
                             @endforeach
                         </div>
@@ -708,36 +749,26 @@
                     'role' => $item->role,
                     'feedback' => $item->feedback,
                 ]);
-
-                if ($testimonialItems->isEmpty()) {
-                    $testimonialItems = collect([
-                        ['name' => 'Aarav Mehta', 'role' => 'Founder, Retail Brand', 'feedback' => 'Clickvera gave our brand a much stronger digital presence. The entire process was clear, responsive, and focused on business results.'],
-                        ['name' => 'Neha Sharma', 'role' => 'Director, Education', 'feedback' => 'The team understood our requirements quickly and delivered a clean, fast website that is much easier for our customers to use.'],
-                        ['name' => 'Rohan Kapoor', 'role' => 'E-commerce Owner', 'feedback' => 'From design to launch, everything was handled professionally. We have seen a noticeable improvement in enquiries and conversions.'],
-                        ['name' => 'Priya Verma', 'role' => 'Marketing Manager', 'feedback' => 'Their communication and attention to detail stood out. We always knew what was happening and every milestone was delivered on time.'],
-                        ['name' => 'Kunal Singh', 'role' => 'Founder, Service Business', 'feedback' => 'Clickvera turned our ideas into a polished digital experience. The website looks premium and works perfectly across every device.'],
-                        ['name' => 'Simran Kaur', 'role' => 'Brand Consultant', 'feedback' => 'A dependable creative and technology partner. They bring practical suggestions, strong execution, and genuine care to every project.'],
-                        ['name' => 'Vikram Joshi', 'role' => 'Operations Head', 'feedback' => 'The new platform has simplified our workflow and made it easier for our team to manage daily operations without technical friction.'],
-                        ['name' => 'Ananya Rao', 'role' => 'Small Business Owner', 'feedback' => 'They listened carefully, explained everything simply, and built exactly what our growing business needed. I would happily work with them again.'],
-                    ]);
-                }
             @endphp
             <div class="testimonial-heading reveal">
                 <div>
                     <p class="eyebrow">CLIENT STORIES</p>
-                    <h2 class="section-title text-white">Trusted by businesses.<br><em>Remembered for results.</em></h2>
+                    <h2 class="section-title text-white">Client Success Stories</h2>
                 </div>
                 <div class="testimonial-summary">
                     <div class="testimonial-score"><strong>4.9</strong><span><b>★★★★★</b>Average client rating</span></div>
-                    <p>Clear communication, thoughtful execution, and digital work that moves businesses forward.</p>
+                    <p>Clear communication, thoughtful execution, and digital work that moves businesses forward. Ratings and counts shown here reflect information published on this website.</p>
                 </div>
             </div>
+            @if($testimonialItems->isEmpty())
+            <div class="empty-state reveal" style="grid-column: 1 / -1; color: rgba(255,255,255,.75); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 24px; text-align: center;">Verified client stories will appear here after publishing from admin. <a href="{{ route('contact') }}" style="color:#5eead4; font-weight:700;">Contact ClickVera to start your project</a>.</div>
+            @else
             <div class="testimonial-carousel reveal" data-carousel="testimonials">
                 <div class="carousel-track">
                     @foreach($testimonialItems as $testimonial)
                     <article class="testimonial-quote-card carousel-card">
-                        <div class="testimonial-card-top"><span class="testimonial-stars">★★★★★</span><span class="testimonial-verified">✓ Verified client</span></div>
-                        <div class="quote-icon">&ldquo;</div>
+                        <div class="testimonial-card-top"><span class="testimonial-stars" aria-label="Rated 5 out of 5 stars">★★★★★</span><span class="testimonial-verified">✓ Verified client</span></div>
+                        <div class="quote-icon" aria-hidden="true">&ldquo;</div>
                         <p class="quote-text">{{ $testimonial['feedback'] }}</p>
                         <div class="quote-author">
                             <div>
@@ -756,6 +787,51 @@
                     <button type="button" data-dir="1" aria-label="Next testimonial">→</button>
                 </div>
             </div>
+            @endif
+        </div>
+    </section>
+
+
+    {{-- ═══════════════════════════════════════════════
+         FAQ
+         ═══════════════════════════════════════════════ --}}
+    <section class="section-light" aria-labelledby="faq-heading">
+        <div class="container-wide" style="max-width: 56rem;">
+            <div class="section-heading reveal" style="text-align: center; max-width: 56rem; margin-left: auto; margin-right: auto;">
+                <p class="eyebrow-dark" style="justify-content: center;">FAQ</p>
+                <h2 id="faq-heading" class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+                <p class="home-section-copy" style="text-align: center; margin-left: auto; margin-right: auto;">Clear answers about ClickVera services for websites, SEO, e-commerce and digital growth. Need more detail? <a href="{{ route('contact') }}" style="font-weight:700; color:#0F766E;">Contact ClickVera</a>.</p>
+            </div>
+            <div class="mt-10 grid gap-4">
+                <details class="reveal" style="background:#fff; border:1px solid var(--cv-line); border-radius:16px; padding:20px 22px; box-shadow:var(--cv-shadow-sm);">
+                    <summary style="font-weight:800; color:#0F172A; cursor:pointer; font-size:1rem;">What services does ClickVera provide?</summary>
+                    <p style="margin-top:10px; color:#64748B; line-height:1.7; font-size:.9375rem;">ClickVera provides website design and development, UI/UX design, web application development, e-commerce development, SEO and local SEO, digital marketing, social media management, lead generation, content, branding and website maintenance and technical support.</p>
+                </details>
+                <details class="reveal" style="background:#fff; border:1px solid var(--cv-line); border-radius:16px; padding:20px 22px; box-shadow:var(--cv-shadow-sm);">
+                    <summary style="font-weight:800; color:#0F172A; cursor:pointer; font-size:1rem;">Does ClickVera provide SEO services?</summary>
+                    <p style="margin-top:10px; color:#64748B; line-height:1.7; font-size:.9375rem;">Yes. ClickVera provides SEO and local SEO services, including on-page optimisation, technical improvements and local presence optimisation. Ongoing monthly SEO support starts from ₹10,000/month. <a href="{{ route('services') }}#services" style="font-weight:700; color:#0F766E;">Explore SEO services</a>.</p>
+                </details>
+                <details class="reveal" style="background:#fff; border:1px solid var(--cv-line); border-radius:16px; padding:20px 22px; box-shadow:var(--cv-shadow-sm);">
+                    <summary style="font-weight:800; color:#0F172A; cursor:pointer; font-size:1rem;">Does ClickVera develop business websites?</summary>
+                    <p style="margin-top:10px; color:#64748B; line-height:1.7; font-size:.9375rem;">Yes. ClickVera designs and develops responsive business websites — from 1–5 page starter websites to custom 10-page websites and advanced builds — with SEO-friendly structure and lead-generation forms. <a href="{{ route('services') }}#services" style="font-weight:700; color:#0F766E;">Explore website development services</a>.</p>
+                </details>
+                <details class="reveal" style="background:#fff; border:1px solid var(--cv-line); border-radius:16px; padding:20px 22px; box-shadow:var(--cv-shadow-sm);">
+                    <summary style="font-weight:800; color:#0F172A; cursor:pointer; font-size:1rem;">Does ClickVera provide e-commerce development?</summary>
+                    <p style="margin-top:10px; color:#64748B; line-height:1.7; font-size:.9375rem;">Yes. ClickVera builds custom e-commerce websites as part of Scale solutions and custom services, with design, development and ongoing support shaped around your products and workflow.</p>
+                </details>
+                <details class="reveal" style="background:#fff; border:1px solid var(--cv-line); border-radius:16px; padding:20px 22px; box-shadow:var(--cv-shadow-sm);">
+                    <summary style="font-weight:800; color:#0F172A; cursor:pointer; font-size:1rem;">Does ClickVera work with startups and small businesses?</summary>
+                    <p style="margin-top:10px; color:#64748B; line-height:1.7; font-size:.9375rem;">Yes. ClickVera works with startups, SMEs, local businesses, professional service companies and growing brands, with Launch, Growth and Scale plans for different stages. <a href="{{ route('about') }}" style="font-weight:700; color:#0F766E;">About ClickVera</a>.</p>
+                </details>
+                <details class="reveal" style="background:#fff; border:1px solid var(--cv-line); border-radius:16px; padding:20px 22px; box-shadow:var(--cv-shadow-sm);">
+                    <summary style="font-weight:800; color:#0F172A; cursor:pointer; font-size:1rem;">How does ClickVera's digital marketing service work?</summary>
+                    <p style="margin-top:10px; color:#64748B; line-height:1.7; font-size:.9375rem;">ClickVera plans targeted digital marketing and lead-generation campaigns with conversion-focused pages, analytics and reporting. Monthly management starts from ₹20,000/month, with advertising budgets billed separately.</p>
+                </details>
+                <details class="reveal" style="background:#fff; border:1px solid var(--cv-line); border-radius:16px; padding:20px 22px; box-shadow:var(--cv-shadow-sm);">
+                    <summary style="font-weight:800; color:#0F172A; cursor:pointer; font-size:1rem;">How can I get started with ClickVera?</summary>
+                    <p style="margin-top:10px; color:#64748B; line-height:1.7; font-size:.9375rem;">Share your requirements through the contact form or book a free consultation. The ClickVera team responds within 24 hours with a clear plan, scope, timeline and proposal. <a href="{{ route('contact') }}" style="font-weight:700; color:#0F766E;">Book a free consultation</a>.</p>
+                </details>
+            </div>
         </div>
     </section>
 
@@ -768,8 +844,8 @@
         <div class="contact-shell reveal">
             <div class="contact-intro">
                 <div class="contact-kicker"><span>01</span> START YOUR PROJECT</div>
-                <h2 class="section-title text-white">Have an idea?<br><em>Let's make it real.</em></h2>
-                <p class="section-subtitle" style="color: rgba(203,213,225,.65);">Share a few details about your project and we'll get back to you within 24 hours with a clear plan and a free proposal no commitment required.</p>
+                <h2 class="section-title text-white">Ready to Grow Your Business Online?</h2>
+                <p class="section-subtitle" style="color: rgba(203,213,225,.65);">Share a few details about your project and ClickVera will get back to you within 24 hours with a clear plan and a free proposal — no commitment required. Prefer to talk first? <a href="{{ route('contact') }}" style="color:#5eead4; font-weight:700;">Book a free consultation</a>.</p>
                 <div class="contact-benefits">
                     <div class="contact-benefit">
                         <span class="contact-benefit-icon">
@@ -788,14 +864,14 @@
             </div>
             <form method="post" action="{{ route('contact.store') }}" class="contact-card contact-form-modern">
                 @csrf
-                <div class="contact-form-head"><div><span class="plan-badge">Project inquiry</span><h2>Tell us what you're building.</h2></div><span class="contact-form-number">02</span></div>
+                <div class="contact-form-head"><div><span class="plan-badge">Project inquiry</span><p class="contact-form-title" style="font-size:1.25rem; font-weight:800; color:#fff; margin-top:8px;">Tell us what you're building.</p></div><span class="contact-form-number" aria-hidden="true">02</span></div>
                 @if(session('success'))
                     <div class="success-alert">{{ session('success') }}</div>
                 @endif
                 <div class="contact-fields">
-                    <label><span>Your name</span><input class="field-dark" name="name" value="{{ old('name') }}" placeholder="e.g. Rahul Sharma" required></label>
-                    <label><span>Work email</span><input class="field-dark" name="email" value="{{ old('email') }}" type="email" placeholder="you@company.com" required></label>
-                    <label class="contact-field-wide"><span>Phone number <small>Optional</small></span><input class="field-dark" name="phone" value="{{ old('phone') }}" placeholder="+91 98765 43210"></label>
+                    <label><span>Your name</span><input class="field-dark" name="name" value="{{ old('name') }}" placeholder="e.g. Rahul Sharma" required autocomplete="name"></label>
+                    <label><span>Work email</span><input class="field-dark" name="email" value="{{ old('email') }}" type="email" placeholder="you@company.com" required autocomplete="email"></label>
+                    <label class="contact-field-wide"><span>Phone number <small>Optional</small></span><input class="field-dark" name="phone" value="{{ old('phone') }}" type="tel" placeholder="+91 98765 43210" autocomplete="tel"></label>
                     <label class="contact-field-wide"><span>Project details</span><textarea class="field-dark" name="message" placeholder="What would you like us to design or build?" rows="5" required>{{ old('message') }}</textarea></label>
                     <button class="btn-primary btn-xl" type="submit" style="width: 100%;">
                         Start a conversation
