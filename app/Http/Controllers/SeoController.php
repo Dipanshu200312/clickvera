@@ -11,7 +11,7 @@ class SeoController extends Controller
 {
     public function sitemap(): Response
     {
-        URL::forceRootUrl('https://clickvera.in');
+        URL::forceRootUrl('https://www.clickvera.in');
         URL::forceScheme('https');
 
         $now = now()->toAtomString();
@@ -58,6 +58,8 @@ class SeoController extends Controller
 
     public function robots(): Response
     {
+        URL::forceRootUrl('https://www.clickvera.in');
+        URL::forceScheme('https');
         $body = "User-agent: *\nAllow: /\nSitemap: ".URL::to('/sitemap.xml')."\n";
         return response($body, 200)->header('Content-Type', 'text/plain');
     }

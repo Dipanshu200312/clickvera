@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('meta_title', 'Digital Marketing & Web Development Agency in India | ClickVera')
 @section('meta_description', 'ClickVera is a digital marketing and web development agency in India offering SEO, websites, e-commerce, UI/UX, digital marketing and technology solutions.')
-@section('canonical_url', 'https://clickvera.in/')
-@section('og_image', 'https://clickvera.in/assets/logo/logo.png')
+@section('canonical_url', 'https://www.clickvera.in/')
+@section('og_image', 'https://www.clickvera.in/assets/logo/logo.png')
 @section('schema')
 <script type="application/ld+json">
 {!! json_encode([
@@ -10,23 +10,23 @@
     '@graph' => [
         [
             '@type' => 'Organization',
-            '@id' => 'https://clickvera.in/#organization',
+            '@id' => 'https://www.clickvera.in/#organization',
             'name' => 'ClickVera',
-            'url' => 'https://clickvera.in/',
-            'logo' => 'https://clickvera.in/assets/logo/logo.png',
+            'url' => 'https://www.clickvera.in/',
+            'logo' => 'https://www.clickvera.in/assets/logo/logo.png',
             'email' => 'team@clickvera.in',
             'telephone' => '+91 8178842239',
         ],
         [
             '@type' => 'WebSite',
-            '@id' => 'https://clickvera.in/#website',
-            'url' => 'https://clickvera.in/',
+            '@id' => 'https://www.clickvera.in/#website',
+            'url' => 'https://www.clickvera.in/',
             'name' => 'ClickVera',
-            'publisher' => ['@id' => 'https://clickvera.in/#organization'],
+            'publisher' => ['@id' => 'https://www.clickvera.in/#organization'],
         ],
         [
             '@type' => 'FAQPage',
-            '@id' => 'https://clickvera.in/#faq',
+            '@id' => 'https://www.clickvera.in/#faq',
             'mainEntity' => [
                 ['@type' => 'Question', 'name' => 'What services does ClickVera provide?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'ClickVera provides website design and development, UI/UX design, web application development, e-commerce development, SEO and local SEO, digital marketing, social media management, lead generation, content, branding and website maintenance and technical support.']],
                 ['@type' => 'Question', 'name' => 'Does ClickVera provide SEO services?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera provides SEO and local SEO services, including on-page optimisation, technical improvements, local presence optimisation and ongoing monthly SEO support starting from ₹10,000/month.']],
