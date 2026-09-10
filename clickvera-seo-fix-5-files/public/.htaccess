@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Canonical: apex clickvera.in -> www (301, preserves path/query).
+    # Mirrors root .htaccess for hosts with document root = public/.
+    # Scoped to production apex only so localhost/staging are never redirected.
+    RewriteCond %{HTTP_HOST} ^clickvera\.in$ [NC]
+    RewriteRule ^ https://www.clickvera.in%{REQUEST_URI} [L,R=301]
+
+    # Enforce HTTPS on www production host only (no localhost impact).
+    RewriteCond %{HTTP_HOST} ^www\.clickvera\.in$ [NC]
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://www.clickvera.in%{REQUEST_URI} [L,R=301]
+
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

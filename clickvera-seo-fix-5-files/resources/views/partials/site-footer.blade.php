@@ -14,7 +14,7 @@
             <div>
                 <p class="eyebrow">Ready to start?</p>
                 <h2>Ready to Grow Your Business Online?</h2>
-                <p>From your first website to ongoing growth and support — everything shaped around your business goals. <a href="{{ route('services') }}" style="color:#5eead4; font-weight:700;">Explore our services</a>.</p>
+                <p>Websites, SEO, digital marketing, e-commerce, UI/UX and technical support shaped around your business goals. <a href="{{ route('services') }}" style="color:#5eead4; font-weight:700;">Explore digital marketing services</a>.</p>
             </div>
             <a href="{{ route('contact') }}" class="btn-primary btn-xl" style="white-space: nowrap;">
                 Book a Free Consultation

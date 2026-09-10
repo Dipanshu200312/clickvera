@@ -7,7 +7,7 @@
 {{-- Organization schema (head). Add "sameAs": ["<linkedin>", "<instagram>", "<x>"] once real profile URLs are available. --}}
 <script type="application/ld+json">
 {!! json_encode([
-    '@' . 'context' => 'https://schema.org',
+    '@context' => 'https://schema.org',
     '@type' => 'Organization',
     '@id' => 'https://www.clickvera.in/#organization',
     'name' => 'ClickVera',
@@ -20,7 +20,7 @@
 {{-- FAQPage schema (head). Questions/answers mirror the visible FAQ section below. --}}
 <script type="application/ld+json">
 {!! json_encode([
-    '@' . 'context' => 'https://schema.org',
+    '@context' => 'https://schema.org',
     '@type' => 'FAQPage',
     '@id' => 'https://www.clickvera.in/#faq',
     'mainEntity' => [
@@ -36,9 +36,6 @@
 </script>
 @endsection
 @section('content')
-{{-- FOLLOW-UP (photos): hero/about/service images below are generic stock photos.
-     Replace with real team photos, project screenshots or permitted client
-     dashboard shots (About + hero first), updating ALT text to match. --}}
 @php
     $images = [
         'hero' => 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=75',
@@ -273,7 +270,7 @@
                         <span class="stat-label">On-time</span>
                     </article>
                     <article style="padding:12px 10px;">
-                        <span class="stat-number" style="font-size:1.35rem;">6+</span>
+                        <span class="stat-number" style="font-size:1.35rem;">5+</span>
                         <span class="stat-label">Years</span>
                     </article>
                 </div>
@@ -284,6 +281,18 @@
                 <div style="position:relative; border-radius:24px; overflow:hidden; border:1px solid rgba(255,255,255,.09); box-shadow: 0 28px 70px rgba(0,0,0,.38), 0 0 0 1px rgba(255,255,255,.04) inset; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); padding: 8px;">
                     <div style="border-radius:18px; overflow:hidden; position:relative; background:#0F172A; border:1px solid rgba(255,255,255,.06);">
                         <img src="{{ $images['hero'] }}" alt="ClickVera digital marketing and web development team collaborating on client growth" width="1200" height="404" fetchpriority="high" decoding="async" style="width:100%; height:404px; object-fit:cover; opacity:1; filter: saturate(1.08) contrast(1.06); display:block;">
+                        <div style="position:absolute; inset:auto 12px 12px 12px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                            <div style="background:rgba(255,255,255,.96); backdrop-filter:blur(14px); border-radius:14px; padding:12px; border:1px solid rgba(226,232,240,.9); box-shadow: 0 8px 24px rgba(15,23,42,.12);">
+                                <div style="font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#64748b;">Revenue Growth</div>
+                                <div style="margin-top:6px; display:flex; align-items:baseline; gap:6px;"><b style="font-size:20px; font-weight:900; color:#0F172A;">+127%</b><span style="font-size:11px; font-weight:800; color:#0F766E;">↑ 6 months</span></div>
+                                <div style="margin-top:8px; height:4px; background:#e2e8f0; border-radius:99px; overflow:hidden;"><div style="width:78%; height:100%; background:linear-gradient(90deg,#0F766E,#14B8A6); border-radius:99px;"></div></div>
+                            </div>
+                            <div style="background:linear-gradient(135deg,#0F172A 0%,#1e293b 100%); color:#fff; border-radius:14px; padding:12px; border:1px solid rgba(255,255,255,.08); box-shadow: 0 8px 24px rgba(0,0,0,.2);">
+                                <div style="font-size:11px; font-weight:700; color:#94a3b8; letter-spacing:.05em; text-transform:uppercase;">Live Projects</div>
+                                <div style="margin-top:4px; display:flex; align-items:center; gap:8px;"><span style="width:8px; height:8px; border-radius:99px; background:#22c55e; box-shadow:0 0 10px rgba(34,197,94,.6); animation: pulse 2s infinite;"></span><b style="font-size:14px;">12 Active</b></div>
+                                <div style="margin-top:8px; font-size:11px; font-weight:600; color:#cbd5e1;">On-time 98% • 4.9★ rating</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- floating accent -->
@@ -326,8 +335,8 @@
                     <span style="width:6px; height:6px; border-radius:99px; background:#22c55e;"></span>
                     <span style="font-size:12px; font-weight:700; color:#64748b;">Since 2020</span>
                 </div>
-                <h2 class="section-title" style="margin-top: 14px; font-size: clamp(1.85rem, 3vw, 2.4rem); line-height:1.12; letter-spacing:-.03em; font-weight: 900;">Build, Improve &amp; Grow Your Online Presence With One Team</h2>
-                <p class="mt-4 text-[15px] leading-7 text-slate-600">ClickVera works with startups, SMEs and local businesses to fix slow websites, weak search visibility and inconsistent enquiries. Strategy, design, development, search optimisation and ongoing support come together under one roof — so every part of your online presence pulls in the same direction: winning customers.</p>
+                <h2 class="section-title" style="margin-top: 14px; font-size: clamp(1.85rem, 3vw, 2.4rem); line-height:1.12; letter-spacing:-.03em; font-weight: 900;">Digital Marketing &amp; Technology Solutions That Drive Growth</h2>
+                <p class="mt-4 text-[15px] leading-7 text-slate-600">ClickVera is a digital marketing agency in India helping startups, SMEs and local businesses solve slow websites, low search visibility and inconsistent enquiries. We bring <b style="color:#0F172A; font-weight:800;">strategy + website development + SEO + digital marketing + support</b> under one roof — so your digital presence works together to win customers.</p>
 
                 <div class="mt-7 grid grid-cols-3 gap-3">
                     <div style="text-align:center; background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:16px 8px; box-shadow: 0 4px 12px rgba(15,23,42,.04);"><div style="font-size:20px; font-weight:900; color:#0F172A; line-height:1;">150+</div><div style="font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#64748b; margin-top:6px;">Projects</div></div>
@@ -688,37 +697,30 @@
 
 
     {{-- ═══════════════════════════════════════════════
-         CLIENTS — each logo renders only with an approved one-line outcome.
-         Fill 'outcome' with a real, account-owner-approved result to show it.
-         The section auto-hides until at least one outcome exists.
+         CLIENTS
          ═══════════════════════════════════════════════ --}}
-    @php
-        $clientLogos = [
-            ['file' => 'B1HH.webp', 'name' => 'B1HH', 'outcome' => ''],
-            ['file' => 'Elevare.webp', 'name' => 'Elevare', 'outcome' => ''],
-            ['file' => 'rs.svg', 'name' => 'RS', 'outcome' => ''],
-            ['file' => 'tripbaggo-logo.webp', 'name' => 'Tripbaggo', 'outcome' => ''],
-        ];
-        $provenClients = array_values(array_filter($clientLogos, fn ($c) => trim($c['outcome'] ?? '') !== ''));
-    @endphp
-    @if(count($provenClients))
     <section class="section-light alt clients-section">
         <div class="container-wide" style="text-align: center;">
             <div class="section-heading reveal" style="max-width: 42rem; margin-left: auto; margin-right: auto;">
                 <p class="eyebrow-dark" style="justify-content: center;">OUR CLIENTS</p>
                 <h2 class="section-title" style="text-align: center;">Brands that trust our work.</h2>
             </div>
+            @php
+                $clientLogos = [
+                    ['file' => 'B1HH.webp', 'name' => 'B1HH'],
+                    ['file' => 'Elevare.webp', 'name' => 'Elevare'],
+                    ['file' => 'rs.svg', 'name' => 'RS'],
+                    ['file' => 'tripbaggo-logo.webp', 'name' => 'Tripbaggo'],
+                ];
+            @endphp
             <div class="client-logo-slider reveal" aria-label="Our clients">
                 <div class="client-logo-track">
                     @foreach([false, true] as $isDuplicate)
                         <div class="client-logo-group" @if($isDuplicate) aria-hidden="true" @endif>
-                            @foreach($provenClients as $clientLogo)
-                                <figure class="home-logo-tile-light client-logo-tile" style="text-align:center;">
-                                    <img src="{{ asset('assets/logo/'.$clientLogo['file']) }}" alt="{{ $isDuplicate ? '' : $clientLogo['name'].' logo — ClickVera client' }}" @if($isDuplicate) aria-hidden="true" @endif width="160" height="64" loading="lazy" decoding="async">
-                                    @unless($isDuplicate)
-                                        <figcaption style="margin-top:8px; font-size:12px; font-weight:600; color:#64748b; line-height:1.5;">{{ $clientLogo['outcome'] }}</figcaption>
-                                    @endunless
-                                </figure>
+                            @foreach($clientLogos as $clientLogo)
+                                <div class="home-logo-tile-light client-logo-tile">
+                                    <img src="{{ asset('assets/logo/'.$clientLogo['file']) }}" alt="{{ $isDuplicate ? '' : $clientLogo['name'].' — ClickVera client success story' }}" @if($isDuplicate) aria-hidden="true" @endif width="160" height="64" loading="lazy" decoding="async">
+                                </div>
                             @endforeach
                         </div>
                     @endforeach
@@ -726,7 +728,6 @@
             </div>
         </div>
     </section>
-    @endif
 
 
     {{-- ═══════════════════════════════════════════════
