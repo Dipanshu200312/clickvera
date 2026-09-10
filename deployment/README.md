@@ -1,25 +1,37 @@
 # clickvera.in live folder setup
 
-Assumed Laravel project folder: `public_html/clickvera` (spelled clickvera).
+Confirmed hosting layout: the Laravel project is directly in `public_html`.
+The folders `app`, `bootstrap`, `config`, `public`, and `routes` are siblings.
+The front controller is `public_html/public/index.php`.
 
-Preferred setup: set the domain document root to `public_html/clickvera/public`.
-The project's existing `public/index.php` already uses the correct relative paths.
-When using this document root, keep the existing `public/.htaccess`; do not upload
-the fallback file supplied here.
+Back up the hosting `public_html/.htaccess`, then replace it with
+`deployment/public_html/.htaccess`. Do not put this file inside `public/`.
+Preserve hosting-managed PHP handler directives from the backup, if present.
+The fallback routes the homepage and application routes to `public/index.php`
+and serves assets only from `public/`. Internal rewrites use `[END]` to avoid
+re-entering the rules. It requires Apache 2.4-compatible rewrite support.
 
-If hosting fixes the document root at `public_html`, back up its existing
-`.htaccess`, then upload `deployment/public_html/.htaccess` as
-`public_html/.htaccess`. This fallback requires Apache 2.4 with mod_rewrite and
-AllowOverride enabled. It routes requests directly to `clickvera/public`, serves
-public assets, and prevents direct access to the private project folder.
-Merge any hosting-managed rules from the backup when needed.
+Alternatively, set the domain document root to `public_html/public` and use
+that folder's existing `public/.htaccess`, without this fallback.
 
-Keep the production environment file at `public_html/clickvera/.env`, with
-`APP_URL=https://clickvera.in` and `APP_DEBUG=false`.
+Keep the production `.env` at `public_html/.env`, with
+`APP_URL=https://www.clickvera.in` and `APP_DEBUG=false`. Preserve the existing
+APP_KEY and production database credentials.
 
-After uploading, run `php artisan optimize:clear` from `public_html/clickvera`
-using the hosting terminal, then check the homepage, a nested route, and assets.
-Requests to `/.env` and `/clickvera/.env` should return 403.
+After uploading, check the homepage, a nested route, and a public asset.
+Requests to `/.env`, `/vendor/autoload.php`, and `/storage/logs/laravel.log`
+must not expose private files. The fallback never serves root storage files;
+public uploads should use the `public/storage` link.
 
-These files are prepared locally; hosting settings and live requests have not
-been changed or verified.
+If HTTP 500 remains, inspect the hosting error log and
+`public_html/storage/logs/laravel.log` immediately after reproducing it.
+Confirm website PHP is 8.2 or newer, `vendor/autoload.php` exists, the database
+settings are correct, and `storage` and `bootstrap/cache` are writable by PHP.
+After correcting configuration, run `php artisan optimize:clear` from
+`public_html` using the hosting terminal. Review pending migrations before
+applying them. Do not regenerate an existing APP_KEY.
+
+If the hosting log rejects the Options directive, remove the Options line
+and disable directory listing in the hosting panel.
+
+These changes are prepared locally. Upload and live verification are pending.

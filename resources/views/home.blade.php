@@ -4,39 +4,33 @@
 @section('canonical_url', 'https://www.clickvera.in/')
 @section('og_image', 'https://www.clickvera.in/assets/logo/logo.png')
 @section('schema')
+{{-- Organization schema (head). Add "sameAs": ["<linkedin>", "<instagram>", "<x>"] once real profile URLs are available. --}}
 <script type="application/ld+json">
 {!! json_encode([
     '@context' => 'https://schema.org',
-    '@graph' => [
-        [
-            '@type' => 'Organization',
-            '@id' => 'https://www.clickvera.in/#organization',
-            'name' => 'ClickVera',
-            'url' => 'https://www.clickvera.in/',
-            'logo' => 'https://www.clickvera.in/assets/logo/logo.png',
-            'email' => 'team@clickvera.in',
-            'telephone' => '+91 8178842239',
-        ],
-        [
-            '@type' => 'WebSite',
-            '@id' => 'https://www.clickvera.in/#website',
-            'url' => 'https://www.clickvera.in/',
-            'name' => 'ClickVera',
-            'publisher' => ['@id' => 'https://www.clickvera.in/#organization'],
-        ],
-        [
-            '@type' => 'FAQPage',
-            '@id' => 'https://www.clickvera.in/#faq',
-            'mainEntity' => [
-                ['@type' => 'Question', 'name' => 'What services does ClickVera provide?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'ClickVera provides website design and development, UI/UX design, web application development, e-commerce development, SEO and local SEO, digital marketing, social media management, lead generation, content, branding and website maintenance and technical support.']],
-                ['@type' => 'Question', 'name' => 'Does ClickVera provide SEO services?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera provides SEO and local SEO services, including on-page optimisation, technical improvements, local presence optimisation and ongoing monthly SEO support starting from ₹10,000/month.']],
-                ['@type' => 'Question', 'name' => 'Does ClickVera develop business websites?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera designs and develops responsive business websites, from 1–5 page starter websites to custom 10-page websites and advanced custom builds, with SEO-friendly structure and lead-generation forms.']],
-                ['@type' => 'Question', 'name' => 'Does ClickVera provide e-commerce development?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera builds custom e-commerce websites as part of its Scale solutions and custom services, with design, development and ongoing support shaped around your products and workflow.']],
-                ['@type' => 'Question', 'name' => 'Does ClickVera work with startups and small businesses?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera works with startups, SMEs, local businesses, professional service companies and growing brands, with Launch, Growth and Scale plans for different stages.']],
-                ['@type' => 'Question', 'name' => 'How does ClickVera\u2019s digital marketing service work?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'ClickVera plans targeted digital marketing and lead-generation campaigns with conversion-focused pages, analytics and reporting. Monthly management starts from ₹20,000/month, with advertising budgets billed separately.']],
-                ['@type' => 'Question', 'name' => 'How can I get started with ClickVera?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Share your requirements through the contact form or book a free consultation. The ClickVera team responds within 24 hours with a clear plan, scope, timeline and proposal.']],
-            ],
-        ],
+    '@type' => 'Organization',
+    '@id' => 'https://www.clickvera.in/#organization',
+    'name' => 'ClickVera',
+    'url' => 'https://www.clickvera.in/',
+    'logo' => 'https://www.clickvera.in/assets/logo/logo.png',
+    'email' => 'team@clickvera.in',
+    'telephone' => '+91 8178842239',
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+{{-- FAQPage schema (head). Questions/answers mirror the visible FAQ section below. --}}
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'FAQPage',
+    '@id' => 'https://www.clickvera.in/#faq',
+    'mainEntity' => [
+        ['@type' => 'Question', 'name' => 'What services does ClickVera provide?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'ClickVera provides website design and development, UI/UX design, web application development, e-commerce development, SEO and local SEO, digital marketing, social media management, lead generation, content, branding and website maintenance and technical support.']],
+        ['@type' => 'Question', 'name' => 'Does ClickVera provide SEO services?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera provides SEO and local SEO services, including on-page optimisation, technical improvements and local presence optimisation. Ongoing monthly SEO support starts from ₹10,000/month.']],
+        ['@type' => 'Question', 'name' => 'Does ClickVera develop business websites?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera designs and develops responsive business websites, from 1–5 page starter websites to custom 10-page websites and advanced builds, with SEO-friendly structure and lead-generation forms.']],
+        ['@type' => 'Question', 'name' => 'Does ClickVera provide e-commerce development?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera builds custom e-commerce websites as part of Scale solutions and custom services, with design, development and ongoing support shaped around your products and workflow.']],
+        ['@type' => 'Question', 'name' => 'Does ClickVera work with startups and small businesses?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. ClickVera works with startups, SMEs, local businesses, professional service companies and growing brands, with Launch, Growth and Scale plans for different stages.']],
+        ['@type' => 'Question', 'name' => "How does ClickVera's digital marketing service work?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'ClickVera plans targeted digital marketing and lead-generation campaigns with conversion-focused pages, analytics and reporting. Monthly management starts from ₹20,000/month, with advertising budgets billed separately.']],
+        ['@type' => 'Question', 'name' => 'How can I get started with ClickVera?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Share your requirements through the contact form or book a free consultation. The ClickVera team responds within 24 hours with a clear plan, scope, timeline and proposal.']],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
 </script>
@@ -44,11 +38,11 @@
 @section('content')
 @php
     $images = [
-        'hero' => 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=85',
-        'team' => 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=85',
-        'marketing' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85',
-        'code' => 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85',
-        'writing' => 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85',
+        'hero' => 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=75',
+        'team' => 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=70',
+        'marketing' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=70',
+        'code' => 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=70',
+        'writing' => 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=70',
     ];
 
     $partners = ['Google', 'Meta', 'Shopify', 'WordPress', 'Laravel'];
@@ -252,10 +246,10 @@
 
                 <div class="hero-social-proof" style="justify-content: center;">
                     <style>@media(min-width:1024px){ .hero-social-proof{justify-content:flex-start !important;}}</style>
-                    <div class="avatar-stack" aria-hidden="true">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="" width="32" height="32" loading="lazy" decoding="async">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="" width="32" height="32" loading="lazy" decoding="async">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="" width="32" height="32" loading="lazy" decoding="async">
+                    <div class="avatar-stack">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face&auto=format" alt="Happy ClickVera client headshot 1" width="32" height="32" loading="lazy" decoding="async">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&auto=format" alt="Happy ClickVera client headshot 2" width="32" height="32" loading="lazy" decoding="async">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face&auto=format" alt="Happy ClickVera client headshot 3" width="32" height="32" loading="lazy" decoding="async">
                         <span>+50</span>
                     </div>
                     <div class="text-left">
@@ -597,9 +591,10 @@
 
 
     {{-- ═══════════════════════════════════════════════
-         FEATURED WORK
+         FEATURED WORK (hidden until real projects are published)
          ═══════════════════════════════════════════════ --}}
-    <section class="section-dark featured-work-section" style="display: none;">
+    @if($projects->isNotEmpty())
+    <section class="section-dark featured-work-section">
         <div class="container-wide grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
             <div class="reveal">
                 <p class="eyebrow">FEATURED WORK</p>
@@ -611,20 +606,17 @@
                 </a>
             </div>
             <div class="grid gap-5 md:grid-cols-2">
-                @forelse($projects->take(4) as $project)
+                @foreach($projects->take(4) as $project)
                     <article class="combo-card reveal">
                         <div class="mini-icon">{{ strtoupper(Str::substr($project->category, 0, 2)) }}</div>
                         <h3>{{ $project->title }}</h3>
                         <p>{{ Str::limit($project->description, 105) }}</p>
                     </article>
-                @empty
-                    <div class="combo-card reveal" style="grid-column: 1 / -1;">
-                        <p>Projects will appear here after publishing from admin.</p>
-                    </div>
-                @endforelse
+                @endforeach
             </div>
         </div>
     </section>
+    @endif
 
 
     {{-- ═══════════════════════════════════════════════
@@ -643,8 +635,9 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
             </div>
+            @if($blogs->isNotEmpty())
             <div class="insights-grid">
-                @forelse($blogs as $blog)
+                @foreach($blogs as $blog)
                     <a href="{{ route('blog.show', $blog->slug) }}" class="project-card insight-card {{ $loop->first ? 'is-featured' : '' }} {{ $blogs->count() === 1 ? 'is-only' : '' }} reveal" style="--delay: {{ $loop->index * 80 }}ms" aria-label="Read article: {{ $blog->title }}">
                         <div class="project-media">
                             <img src="{{ $blog->featured_image ? asset('storage/'.$blog->featured_image) : $images['marketing'] }}" alt="{{ $blog->title }} — ClickVera digital growth insight" width="800" height="450" loading="lazy" decoding="async">
@@ -656,10 +649,9 @@
                             <span class="insight-read-more">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
                         </div>
                     </a>
-                @empty
-                    <div class="empty-state" style="grid-column: 1 / -1;">Blog posts will appear here after publishing from admin.</div>
-                @endforelse
+                @endforeach
             </div>
+            @endif
         </div>
     </section>
 
@@ -739,8 +731,9 @@
 
 
     {{-- ═══════════════════════════════════════════════
-         TESTIMONIALS
+         TESTIMONIALS (hidden until real testimonials are published)
          ═══════════════════════════════════════════════ --}}
+    @if($testimonials->isNotEmpty())
     <section class="section-gradient testimonials-section">
         <div class="container-wide">
             @php
@@ -760,9 +753,6 @@
                     <p>Clear communication, thoughtful execution, and digital work that moves businesses forward. Ratings and counts shown here reflect information published on this website.</p>
                 </div>
             </div>
-            @if($testimonialItems->isEmpty())
-            <div class="empty-state reveal" style="grid-column: 1 / -1; color: rgba(255,255,255,.75); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 24px; text-align: center;">Verified client stories will appear here after publishing from admin. <a href="{{ route('contact') }}" style="color:#5eead4; font-weight:700;">Contact ClickVera to start your project</a>.</div>
-            @else
             <div class="testimonial-carousel reveal" data-carousel="testimonials">
                 <div class="carousel-track">
                     @foreach($testimonialItems as $testimonial)
