@@ -47,7 +47,7 @@ class HomeController extends Controller
         ]));
 
         try {
-            Mail::to('team@clickvera.in')->send(new NewContactLeadMail($lead));
+            Mail::to(env('LEAD_NOTIFY_TO', 'team@clickvera.in'))->send(new NewContactLeadMail($lead));
         } catch (Throwable $exception) {
             Log::error('Contact lead email failed.', [
                 'lead_id' => $lead->id,

@@ -3,14 +3,14 @@ DirectoryIndex disabled
 
 RewriteEngine On
 
-# Canonical website address.
+# Canonical website address - must match root .htaccess (www).
 RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} !^clickvera\.in$ [NC]
-RewriteRule ^ https://clickvera.in%{REQUEST_URI} [R=301,END]
+RewriteCond %{HTTP_HOST} !^www\.clickvera\.in$ [NC]
+RewriteRule ^ https://www.clickvera.in%{REQUEST_URI} [R=301,L]
 
 # Keep private Laravel files and hidden files inaccessible.
-RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F,END]
-RewriteRule ^clickvera(?:/|$) - [F,END,NC]
+RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F,L]
+RewriteRule ^clickvera(?:/|$) - [F,L,NC]
 
 RewriteCond %{HTTP:Authorization} .
 RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -19,7 +19,7 @@ RewriteRule ^ - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
 # Serve files only from Laravel's public directory.
 RewriteCond %{DOCUMENT_ROOT}/clickvera/public/$1 -f
-RewriteRule ^(.+)$ clickvera/public/$1 [END]
+RewriteRule ^(.+)$ clickvera/public/$1 [L]
 
 # Send application routes to Laravel.
-RewriteRule ^ clickvera/public/index.php [END]
+RewriteRule ^ clickvera/public/index.php [L]
