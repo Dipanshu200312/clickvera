@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('meta_title', ($settings['site_name'] ?? config('app.name', 'ClickVera')))</title>
     <meta name="description" content="@yield('meta_description', $settings['meta_description'] ?? 'Digital marketing, website development, and content writing agency.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'digital marketing agency India, web development company, SEO services, ClickVera')">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="@yield('canonical_url', url()->current())">
     <meta property="og:title" content="@yield('meta_title', $settings['site_name'] ?? config('app.name', 'ClickVera'))">

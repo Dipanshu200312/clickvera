@@ -756,7 +756,7 @@
                 <div class="carousel-track">
                     @foreach($testimonialItems as $testimonial)
                     <article class="testimonial-quote-card carousel-card">
-                        <div class="testimonial-card-top"><span class="testimonial-stars" aria-label="Rated 5 out of 5 stars">★★★★★</span><span class="testimonial-verified">✓ Verified client</span></div>
+                        <div class="testimonial-card-top"><span class="testimonial-stars" aria-label="Rated 5 out of 5 stars">★★★★★</span></div>
                         <div class="quote-icon" aria-hidden="true">&ldquo;</div>
                         <p class="quote-text">{{ $testimonial['feedback'] }}</p>
                         <div class="quote-author">
@@ -860,7 +860,7 @@
                 <div class="contact-fields">
                     <label><span>Your name</span><input class="field-dark" name="name" value="{{ old('name') }}" placeholder="e.g. Rahul Sharma" required autocomplete="name"></label>
                     <label><span>Work email</span><input class="field-dark" name="email" value="{{ old('email') }}" type="email" placeholder="you@company.com" required autocomplete="email"></label>
-                    <label class="contact-field-wide"><span>Phone number <small>Optional</small></span><input class="field-dark" name="phone" value="{{ old('phone') }}" type="tel" placeholder="+91 98765 43210" autocomplete="tel"></label>
+                    <label class="contact-field-wide"><span>Phone number <small>Optional</small></span><input class="field-dark" name="phone" value="{{ old('phone') }}" type="tel" placeholder="+91 81788 42239" autocomplete="tel"></label>
                     <label class="contact-field-wide"><span>Project details</span><textarea class="field-dark" name="message" placeholder="What would you like us to design or build?" rows="5" required>{{ old('message') }}</textarea></label>
                     <button class="btn-primary btn-xl" type="submit" style="width: 100%;">
                         Start a conversation

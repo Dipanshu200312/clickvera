@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('meta_title', 'About Us | Clickvera')
 @section('meta_description', 'Learn about Clickvera, a digital and technology partner for design, development, marketing and ongoing support.')
+@section('meta_keywords', 'digital agency India, web development company, About Clickvera')
 @section('content')
 <main class="overflow-hidden">
     {{-- Hero --}}
@@ -29,7 +30,7 @@
     <section class="section-light">
         <div class="container-wide grid gap-12 lg:grid-cols-2 lg:items-center">
             <div class="image-feature-card reveal">
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85" alt="Agency team">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=70" alt="ClickVera growth team collaborating on client strategy" width="800" height="600" loading="lazy" decoding="async">
                 <div><span>Growth team</span><strong>Small enough to move fast, senior enough to move correctly.</strong></div>
             </div>
             <div class="reveal">
@@ -72,19 +73,10 @@
         </div>
     </section>
 
-    {{-- Testimonials --}}
+    {{-- Testimonials (hidden until real testimonials are published in admin) --}}
+    @if($testimonials->isNotEmpty())
     @php
         $aboutTestimonials = $testimonials->map(fn ($item) => ['name' => $item->name, 'role' => $item->role, 'feedback' => $item->feedback]);
-        if ($aboutTestimonials->isEmpty()) {
-            $aboutTestimonials = collect([
-                ['name'=>'Aarav Mehta','role'=>'Founder, Retail Brand','feedback'=>'Clickvera gave our brand a much stronger digital presence. The process was clear, responsive, and focused on results.'],
-                ['name'=>'Neha Sharma','role'=>'Director, Education','feedback'=>'The team understood our requirements quickly and delivered a clean, fast website that is easier for customers to use.'],
-                ['name'=>'Rohan Kapoor','role'=>'E-commerce Owner','feedback'=>'From design to launch, everything was handled professionally. We have seen a clear improvement in enquiries and conversions.'],
-                ['name'=>'Priya Verma','role'=>'Marketing Manager','feedback'=>'Their communication and attention to detail stood out. Every milestone was clear and delivered on time.'],
-                ['name'=>'Kunal Singh','role'=>'Founder, Service Business','feedback'=>'Clickvera turned our ideas into a polished digital experience that looks premium and works across every device.'],
-                ['name'=>'Simran Kaur','role'=>'Brand Consultant','feedback'=>'A dependable creative and technology partner with practical suggestions, strong execution and genuine care.'],
-            ]);
-        }
     @endphp
     <section class="section-light testimonials-section about-testimonials-section" style="background: transparent !important;">
         <div class="container-wide">
@@ -96,7 +88,7 @@
                 <div class="carousel-track">
                     @foreach($aboutTestimonials as $testimonial)
                     <article class="testimonial-quote-card carousel-card">
-                        <div class="testimonial-card-top"><span class="testimonial-stars">★★★★★</span><span class="testimonial-verified">✓ Verified client</span></div>
+                        <div class="testimonial-card-top"><span class="testimonial-stars" aria-label="Rated 5 out of 5 stars">★★★★★</span></div>
                         <div class="quote-icon">&ldquo;</div><p class="quote-text">{{ $testimonial['feedback'] }}</p>
                         <div class="quote-author"><div><div class="author-name">{{ $testimonial['name'] }}</div><div class="author-role">{{ $testimonial['role'] }}</div></div></div>
                     </article>
@@ -109,6 +101,7 @@
             </div>
         </div>
     </section>
+    @endif
 
     {{-- CTA --}}
     <section class="section-gradient">

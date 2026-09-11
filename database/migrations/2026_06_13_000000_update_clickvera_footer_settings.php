@@ -22,11 +22,13 @@ return new class extends Migration
 
     public function down(): void
     {
+        // NOTE: contact_phone intentionally keeps the verified number here too —
+        // rolling back must never restore the old placeholder (+91 98765 43210).
         foreach ([
             'site_name' => 'GrowthForge Agency',
             'footer_text' => 'GrowthForge Agency - Built for measurable digital growth.',
             'contact_email' => 'hello@growthforge.test',
-            'contact_phone' => '+91 98765 43210',
+            'contact_phone' => '+91 8178842239',
         ] as $key => $value) {
             DB::table('site_settings')->updateOrInsert(
                 ['key' => $key],

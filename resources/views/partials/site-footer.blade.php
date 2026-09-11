@@ -4,7 +4,7 @@
     $contactEmail = $siteSettings['contact_email'] ?? 'team@clickvera.in';
     $contactPhone = $siteSettings['contact_phone'] ?? '+91 8178842239';
     $footerImage = 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=70';
-    $teamImage = 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=70';
+    $teamImage = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=70';
     $codeImage = 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=70';
     $writingImage = 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=70';
 @endphp

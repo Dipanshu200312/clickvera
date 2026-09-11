@@ -1,6 +1,45 @@
 @extends('layouts.app')
 @section('meta_title', 'Services & Pricing | Clickvera')
 @section('meta_description', 'Explore Clickvera services for website development, UI/UX design, software, mobile apps, digital marketing, SEO, social media, content, branding and technical support.')
+@section('meta_keywords', 'digital marketing services India, website development company, SEO services, e-commerce development, UI/UX design')
+@section('schema')
+{{-- Service + Offer schema. Prices mirror the visible Launch/Growth/Scale plans (INR). --}}
+<script type="application/ld+json">
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@graph' => [
+        [
+            '@type' => 'Service',
+            '@id' => 'https://www.clickvera.in/services#service',
+            'name' => 'Digital Marketing & Web Development Services',
+            'url' => 'https://www.clickvera.in/services',
+            'provider' => ['@type' => 'Organization', 'name' => 'ClickVera', 'url' => 'https://www.clickvera.in/'],
+            'hasOfferCatalog' => [
+                '@type' => 'OfferCatalog',
+                'name' => 'ClickVera service categories',
+                'itemListElement' => [
+                    ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Build — Website Design & Development, UI/UX, Web Applications, E-commerce']],
+                    ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Grow — SEO, Local SEO, Digital Marketing, Social Media, Lead Generation']],
+                    ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => 'Support & Create — Technical Support, Website Maintenance, Branding, Content']],
+                ],
+            ],
+        ],
+        [
+            '@type' => 'Product',
+            '@id' => 'https://www.clickvera.in/services#plans',
+            'name' => 'ClickVera Website & Growth Plans',
+            'url' => 'https://www.clickvera.in/services#pricing',
+            'brand' => ['@type' => 'Brand', 'name' => 'ClickVera'],
+            'offers' => [
+                ['@type' => 'Offer', 'name' => 'Launch — Build Your Digital Foundation', 'price' => '19999', 'priceCurrency' => 'INR', 'url' => 'https://www.clickvera.in/services#pricing', 'availability' => 'https://schema.org/InStock'],
+                ['@type' => 'Offer', 'name' => 'Growth — Build Your Brand, Generate More Leads', 'price' => '34999', 'priceCurrency' => 'INR', 'url' => 'https://www.clickvera.in/services#pricing', 'availability' => 'https://schema.org/InStock'],
+                ['@type' => 'Offer', 'name' => 'Scale — Build, Grow & Scale Your Digital Business', 'price' => '49999', 'priceCurrency' => 'INR', 'url' => 'https://www.clickvera.in/services#pricing', 'availability' => 'https://schema.org/InStock'],
+            ],
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+@endsection
 @section('content')
 @php
     $serviceCategories = [
@@ -33,7 +72,14 @@
         ['title' => 'Digital Marketing & Lead Generation', 'price' => 'Starting from ₹20,000/month', 'description' => 'Generate qualified leads through targeted digital marketing campaigns and conversion-focused strategies.', 'note' => 'Advertising budget billed separately.', 'cta' => 'Grow Your Business'],
         ['title' => 'Website Maintenance & Security', 'price' => 'Starting from ₹5,000/month', 'description' => 'Keep your website secure, updated, backed up and performing reliably with ongoing technical support.', 'cta' => 'Get Support'],
     ];
-    $industries = ['Startups', 'Small Businesses', 'SMEs', 'Local Businesses', 'Professional Services', 'E-commerce Brands'];
+    $industries = [
+        ['name' => 'Startups', 'desc' => 'Launch fast with an MVP website, sharp positioning and analytics in place from day one — built to impress investors and win first customers.'],
+        ['name' => 'Small Businesses', 'desc' => 'Get a professional online presence on a sensible budget: a starter website, local visibility basics and simple ways for customers to reach you.'],
+        ['name' => 'SMEs', 'desc' => 'Turn your website into a steady enquiry channel with SEO-friendly pages, lead-generation forms and monthly marketing that compounds.'],
+        ['name' => 'Local Businesses', 'desc' => 'Get found nearby with local SEO, Google Business Profile optimisation and reviews support that bring footfall and calls.'],
+        ['name' => 'Professional Services', 'desc' => 'Build trust before the first call with authority content, clear service pages and a polished brand that reflects your expertise.'],
+        ['name' => 'E-commerce Brands', 'desc' => 'Sell more with conversion-optimised storefronts, smooth checkout and payment integration, plus campaigns that bring repeat buyers.'],
+    ];
 @endphp
 <main class="overflow-hidden">
     <section class="page-hero services-page-hero" style="--page-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=85')">
@@ -89,7 +135,7 @@
     <section id="industries" class="section-light services-industries-section">
         <div class="container-wide">
             <div class="flex flex-wrap items-end justify-between gap-6 reveal">
-                <div><p class="eyebrow-dark">Industries</p><h2 class="section-title">Built for practical business growth.</h2><p class="mt-3 max-w-xl text-slate-600 leading-7">Solutions shaped around your market, customer journey and digital maturity.</p></div>
+                <div><p class="eyebrow-dark">Industries</p><h2 class="section-title">Built for practical business growth.</h2><p class="mt-3 max-w-xl text-slate-600 leading-7">Every engagement is shaped around your market, buyers and stage — here are the businesses we serve most.</p></div>
                 <span class="hidden sm:inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-600">6 verticals • 100% tailored</span>
             </div>
             <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -97,7 +143,7 @@
                     <div class="industry-service-card reveal" style="--delay:{{$loop->index*60}}ms">
                         <span class="industry-card-index">0{{ $loop->iteration }}</span>
                         <div class="industry-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
-                        <b class="text-[1.05rem] font-black text-slate-900">{{ $industry }}</b><p class="mt-2 text-sm leading-6 text-slate-600">Solutions shaped around your market, customer journey and current digital maturity.</p>
+                        <b class="text-[1.05rem] font-black text-slate-900">{{ $industry['name'] }}</b><p class="mt-2 text-sm leading-6 text-slate-600">{{ $industry['desc'] }}</p>
                     </div>
                 @endforeach
             </div>
